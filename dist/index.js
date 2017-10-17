@@ -17,11 +17,10 @@ var _path2 = _interopRequireDefault(_path);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* global __dirname*/
 var DEFAULT_FILE_PATH = './alias.json';
 
 var resolvePath = exports.resolvePath = function resolvePath(relativePath) {
-  var currentDirectory = __dirname || _fs2.default.realpathSync(process.cwd());
+  var currentDirectory = _fs2.default.realpathSync(process.cwd());
   return _path2.default.resolve(currentDirectory, relativePath);
 };
 

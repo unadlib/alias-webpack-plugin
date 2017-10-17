@@ -1,10 +1,10 @@
 import fs from 'fs'
 import path from 'path'
-/* global __dirname*/
+
 const DEFAULT_FILE_PATH = './alias.json'
 
 export const resolvePath = (relativePath) => {
-  const currentDirectory = __dirname || fs.realpathSync(process.cwd())
+  const currentDirectory = fs.realpathSync(process.cwd())
   return path.resolve(currentDirectory, relativePath)
 }
 
