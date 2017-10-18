@@ -11,7 +11,7 @@ export const resolvePath = (relativePath) => {
 export default (filePath = DEFAULT_FILE_PATH) => {
   const aliasPath = resolvePath(filePath)
   const isExists = fs.existsSync(aliasPath)
-  let aliasSetting = {}
+  const aliasSetting = {}
   if (isExists) {
     const aliasOptions = require(aliasPath)
     Object.entries(aliasOptions).forEach(([key, relativePath]) => {

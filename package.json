@@ -1,9 +1,12 @@
 {
   "name": "alias-webpack-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Webpack alias batch relative paths configuration plugin",
   "main": "./dist/index.js",
   "scripts": {
+    "test": "jest",
+    "test:cover": "jest --coverage",
+    "test:cover:travis": "npm run test:cover && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "build": "babel src -d dist"
   },
   "repository": {
@@ -22,7 +25,9 @@
   "homepage": "https://github.com/unadlib/alias-webpack-plugin#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "coveralls": "^3.0.0",
+    "jest": "^21.2.1"
   },
   "babel": {
     "presets": [
