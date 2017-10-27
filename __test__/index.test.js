@@ -15,21 +15,21 @@ test(`Defult alias file is empty`, () => {
 })
 
 test(`Defult  'alias.json' alias file is exist`, () => {
-  execSync('mv ./__test__/testboo/alias.json ./alias.json && npx babel-node ./__test__/testboo/boo.js', (error, stdout, stderr) =>{
+  exec('mv ./__test__/testboo/alias.json ./alias.json && npx babel-node ./__test__/testboo/boo.js', (error, stdout, stderr) =>{
     expect(JSON.parse(stdout).test).toEqual(
       path.resolve(path.resolve(__dirname, '../'), require('../alias.json').test)
     )
   })
-  execSync('mv ./alias.json ./__test__/testboo/alias.json')
+  exec('mv ./alias.json ./__test__/testboo/alias.json')
 })
 
 test(`Defult 'alias.config.js' alias file is exist`, () => {
-  execSync('mv ./__test__/testboo/alias.config.js ./alias.config.js && npx babel-node ./__test__/testboo/boo.js', (error, stdout, stderr) =>{
+  exec('mv ./__test__/testboo/alias.config.js ./alias.config.js && npx babel-node ./__test__/testboo/boo.js', (error, stdout, stderr) =>{
     expect(JSON.parse(stdout).test).toEqual(
       path.resolve(path.resolve(__dirname, '../'), require('../alias.config.js').test)
     )
   })
-  execSync('mv ./alias.config.js ./__test__/testboo/alias.config.js')
+  exec('mv ./alias.config.js ./__test__/testboo/alias.config.js')
 })
 
 test(`Test 'resolvePath' function`, () => {
