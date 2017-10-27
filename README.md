@@ -11,7 +11,7 @@ yarn add -D alias-webpack-plugin
 
 ## Example
 
-create alias path list to a `.aliasrc` / `.aliasrc.js` file or create a custom file from execution path
+create alias path list to a `alias.json` / `alias.config.js` file or create a custom file from execution path
 ```javascript
 import aliasWebpackPlugin from 'alias-webpack-plugin'
 
