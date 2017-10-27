@@ -1,6 +1,6 @@
 {
   "name": "alias-webpack-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Webpack alias batch relative paths configuration plugin",
   "main": "./dist/index.js",
   "scripts": {
