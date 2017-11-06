@@ -6,6 +6,13 @@ const DEFAULT_ALIAS_PATH = [
   './alias.config.js'
 ]
 
+function normalizeEsModule(module) {
+  if (module.__esModule) {
+    return module.default
+  }
+  return module
+}
+
 export const resolvePath = (relativePath) => {
   const currentDirectory = fs.realpathSync(process.cwd())
   return path.resolve(currentDirectory, relativePath)
@@ -33,7 +40,7 @@ export default (filePath) => {
   ])
   const aliasSetting = {}
   if (aliasPath) {
-    const aliasOptions = require(aliasPath)
+    const aliasOptions = normalizeEsModule(require(aliasPath))
     Object.entries(aliasOptions).forEach(([key, relativePath]) => {
       aliasSetting[key] = resolvePath(relativePath)
     })
