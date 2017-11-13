@@ -6,7 +6,7 @@ const DEFAULT_ALIAS_PATH = [
   './alias.config.js'
 ]
 
-function normalizeEsModule(module) {
+export const normalizeEsModule = (module) => {
   if (module.__esModule) {
     return module.default
   }

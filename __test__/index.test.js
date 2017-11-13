@@ -1,6 +1,18 @@
 import path from 'path'
 import { exec, execSync } from 'child_process'
-import aliasWebpackPlugin, { resolvePath, getAliasPath } from '../dist'
+import aliasWebpackPlugin, { resolvePath, getAliasPath, normalizeEsModule } from '../dist'
+
+test(`Test 'normalizeEsModule' function`, () => {
+  expect(normalizeEsModule(require('./testboo/alias.config.js'))).toEqual({
+    "test": "boo"
+  })
+})
+
+test(`Test 'normalizeEsModule' function`, () => {
+  expect(normalizeEsModule(require('./testboo/alias.es.config.js'))).toEqual({
+    "test": "boo"
+  })
+})
 
 test(`The custom alias file is empty`, () => {
   expect(aliasWebpackPlugin('./test.json')).toEqual({})
@@ -59,5 +71,4 @@ test(`Test 'resolvePath' function`, () => {
     path.resolve(__dirname, './test.json')
   )
 })
-
 
